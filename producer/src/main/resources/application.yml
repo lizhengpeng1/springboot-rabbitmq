@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+#mq发送者
+spring:
+  application:
+    name: mq-sender-demo
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: host1
+    username: lzp
+    password: 123456
+    # publisher-confirms和publisher-returns是对于消息生产端的配置
+    publisher-confirm-type: simple #开启发送消息确认 对应RabbitTemplate.ConfirmCallback接口（消息是否发送成功到交换机）
+    publisher-returns: true  #开启发送消息失败返回 对应RabbitTemplate.ReturnCallback接口（消息是否从交换机发送到队列成功）

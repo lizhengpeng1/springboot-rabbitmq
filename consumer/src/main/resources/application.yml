@@ -1,0 +1,25 @@
+server:
+  port: 9002
+
+#mq消费者
+spring:
+  application:
+    name: mq-receive-demo
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: host1
+    username: lzp
+    password: 123456
+    listener:
+      simple:
+        acknowledge-mode: manual #开启ack手动确认(NONE,MANUAL,AUTO)
+        concurrency: 1              #当前监听容器数
+        max-concurrency: 1          #最大数
+        retry:
+          enabled: true             #是否支持重试
+
+      direct:
+        acknowledge-mode: manual #开启ack手动确认
+
+

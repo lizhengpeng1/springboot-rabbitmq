@@ -1,0 +1,13 @@
+server:
+  port: 9003
+
+#mq消费者
+spring:
+  application:
+    name: mq-receive-demo
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: host1
+    username: lzp
+    password: 123456
